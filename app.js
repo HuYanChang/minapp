@@ -17,9 +17,13 @@ App({
           code:res.code
         },
         res => {
+          console.log(res)
           let data = res.data
           this.globalData.openid = data.list.openid
           this.globalData.sessionKey = data.list.session_key
+        },
+        fail=>{
+          console.log('登录失败')
         }
         )      
       }

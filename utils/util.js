@@ -33,5 +33,6 @@ const request = (url, method, data, successFun, failFun) => {wx.request({
 
 module.exports = {
   formatTime: formatTime,
-  request: request
+  request: request,
+  app: app
 }

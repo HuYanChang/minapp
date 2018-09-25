@@ -1,3 +1,6 @@
+import baseInfo from '../../config/api.js'
+import utils from '../../utils/util.js'
+const app = getApp()
 // pages/auth/auth.js
 Page({
 
@@ -64,8 +67,19 @@ Page({
   },
   // 用户信息授权
   wxGetUserInfo(e) {
-    wx.request({
-      url: '',
-    })
+    console.log(e)
+    utils.request('BaseInfo/getUnionId', 'POST', {
+      session_key: app.globalData.sessionKey,
+      encryptedData: e.detail.encryptedData,
+      iv: e.detail.iv
+    },
+      res => {
+        console.log(res)
+        let data = res.data
+      },
+      fail => {
+        console.log('登录失败')
+      }
+    )   
   }
 })
