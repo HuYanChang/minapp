@@ -1,3 +1,5 @@
+import baseInfo from './config/api.js'
+import utils from './utils/util.js'
 //app.js
 App({
   onLaunch: function () {
@@ -10,8 +12,16 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
-
+        console.log(res.code) 
+        utils.request('BaseInfo/getCode2session', 'POST', {
+          code:res.code
+        },
+        res => {
+          let data = res.data
+          this.globalData.openid = data.list.openid
+          this.globalData.sessionKey = data.list.session_key
+        }
+        )      
       }
     })
     // 获取用户信息
@@ -43,6 +53,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openid:null,
+    sessionKey:null,
+    code:null
   }
 })

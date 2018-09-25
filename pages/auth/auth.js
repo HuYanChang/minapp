@@ -64,6 +64,8 @@ Page({
   },
   // 用户信息授权
   wxGetUserInfo(e) {
-    console.log(e)
+    wx.request({
+      url: '',
+    })
   }
 })
