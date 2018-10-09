@@ -12,15 +12,20 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res.code) 
         utils.request('BaseInfo/getCode2session', 'POST', {
           code:res.code
         },
         res => {
-          console.log(res)
+          // console.log(res)
           let data = res.data
           this.globalData.openid = data.list.openid
-          this.globalData.sessionKey = data.list.session_key
+          this.globalData.en_str = data.list.en_str
+          if(data.list.unionId){
+            this.globalData.unionId = data.list.unionId
+          }
+          if(data.list.en_str){
+            this.globalData.en_str = data.list.en_str
+          }
         },
         fail=>{
           console.log('登录失败')
@@ -52,7 +57,7 @@ App({
 
     wx.getLocation({
       success:res => {
-        console.log(res)
+        // console.log(res)
       },
     })
   },
@@ -60,6 +65,9 @@ App({
     userInfo: null,
     openid:null,
     sessionKey:null,
-    code:null
+    code:null,
+    unionId:null,
+    en_str:null,
+    avatar: null
   }
 })

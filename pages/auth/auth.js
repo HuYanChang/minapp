@@ -8,20 +8,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null,
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
+    if (app.globalData.userInfo){
+      that.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that = this
+    that.userInfo = app.globalData.userInfo
   },
 
   /**
@@ -67,9 +77,9 @@ Page({
   },
   // 用户信息授权
   wxGetUserInfo(e) {
-    console.log(e)
+    // console.log(e)
     utils.request('BaseInfo/getUnionId', 'POST', {
-      session_key: app.globalData.sessionKey,
+      en_str: app.globalData.en_str,
       encryptedData: e.detail.encryptedData,
       iv: e.detail.iv
     },
@@ -81,5 +91,9 @@ Page({
         console.log('登录失败')
       }
     )   
+  },
+  //手机授权
+  getPhoneNumber(e){
+    console.log(e)
   }
 })

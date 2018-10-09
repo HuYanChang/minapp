@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view></view>
+  <view>{{nowTime}}111</view>
   <view></view>
   <view></view>
 </view>

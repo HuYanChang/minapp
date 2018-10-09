@@ -1,4 +1,5 @@
 //index.js
+import utils from '../../utils/util.js'
 //获取应用实例
 const app = getApp()
 
@@ -7,7 +8,8 @@ Page({
     motto: 'Welcome',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    nowTime:utils.formatTime(new Date())
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +18,8 @@ Page({
     })
   },
   onLoad: function () {
+    let that = this
+    that.nowTime = utils.formatTime(new Date())
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -50,5 +54,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  //监听页面显示
+  onShow: function () {
+      this.nowTime = utils.formatTime(new Date())
+  },
 })
