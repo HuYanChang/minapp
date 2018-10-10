@@ -9,14 +9,16 @@
   </view>
   <view class="info_list">
     <block wx:for="{{userListInfo}}" wx:key="{{key}}">
-        <view class="weui_cell">
+        <navigator url="{{item.toUrl}}">
+          <view class="weui_cell">
             <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
             <view class="weui_cell_bd">
                 <view class="weui_cell_bd_p"> {{item.text}} </view>
             </view>
             <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
-            <view class="with_arrow"></view>
-        </view>
+            <!-- <view class="with_arrow" style="background-image: url('../../images/icon-arrowdown.png')"></view> -->
+          </view>
+        </navigator>
     </block>
   </view>
 </view>

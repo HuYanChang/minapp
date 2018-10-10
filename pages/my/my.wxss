@@ -8,7 +8,7 @@
   flex-direction: column;
   padding: 50rpx 0;
   align-items: center;
-  background: greenyellow;
+  background: #dadada;
 }
 
 .userinfo-avatar {
@@ -71,7 +71,7 @@
   right: 15px;
   width: 15px;
   height: 15px;
-  background-image: url(../../images/icon-arrowdown.png);
+  /* background-image: url(../../images/icon-arrowdown.png);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 100%; */
 }

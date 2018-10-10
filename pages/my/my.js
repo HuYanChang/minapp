@@ -13,26 +13,32 @@ Page({
       icon: '../../public/my/iconfont-dingdan.png',
       text: '我的订单',
       isunread: true,
-      unreadNum: 2
+      unreadNum: 2,
+      toUrl: '/pages/book/book_list/book_list'
     }, {
       icon: '../../public/my/iconfont-card.png',
       text: '我的代金券',
       isunread: false,
-      unreadNum: 2
+      unreadNum: 2,
+      toUrl: ''
     }, {
       icon: '../../public/my/iconfont-icontuan.png',
       text: '我的拼团',
       isunread: true,
-      unreadNum: 1
+      unreadNum: 1,
+      toUrl: ''
     }, {
       icon: '../../public/my/iconfont-shouhuodizhi.png',
-      text: '收货地址管理'
+      text: '收货地址管理',
+      toUrl:''
     }, {
       icon: '../../public/my/iconfont-kefu.png',
-      text: '联系客服'
+      text: '联系客服',
+      toUrl: ''
     }, {
       icon: '../../public/my/iconfont-help.png',
-      text: '常见问题'
+      text: '常见问题',
+      toUrl: ''
     }]
   },
 
