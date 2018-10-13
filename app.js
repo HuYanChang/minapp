@@ -16,12 +16,12 @@ App({
           code:res.code
         },
         res => {
-          // console.log(res)
+          console.log(res)
           let data = res.data
           this.globalData.openid = data.list.openid
           this.globalData.en_str = data.list.en_str
-          if(data.list.unionId){
-            this.globalData.unionId = data.list.unionId
+          if(data.list.union_id){
+            this.globalData.unionId = data.list.union_id
           }
           if(data.list.en_str){
             this.globalData.en_str = data.list.en_str
@@ -40,7 +40,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              console.log(res)
+              // console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
