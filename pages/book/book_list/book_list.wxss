@@ -1,1 +1,10 @@
 /* pages/book/book_list/book_list.wxss */
+.container{
+  height: 100vh;
+}
+.no_list{
+  color: rgba(155, 155, 155, 0.5);
+  font-size: 14px;
+  margin: 48vh 0;
+  text-align: center;
+}

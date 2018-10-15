@@ -9,6 +9,7 @@ Page({
    */
   data: {
     bookList: [],
+    isHidden: false,
     page: 1,
     limit: 20,
   },
@@ -80,9 +81,12 @@ Page({
       res => {
         // console.log(res)
         let data = res.data
-        that.setData({
-          bookList: data.list
-        })
+        if(data.list){
+          that.setData({
+            bookList: data.list,
+            isHidden: true
+          })
+        }
       },
       fail => {
         console.log('获取失败')
