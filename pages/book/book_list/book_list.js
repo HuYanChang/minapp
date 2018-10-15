@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-      page: 1,
-      limit: 20,
+    bookList: [],
+    page: 1,
+    limit: 20,
   },
 
   /**
@@ -77,7 +78,11 @@ Page({
         union_id: app.globalData.unionId
       },
       res => {
-        console.log(res)
+        // console.log(res)
+        let data = res.data
+        that.setData({
+          bookList: data.list
+        })
       },
       fail => {
         console.log('获取失败')
