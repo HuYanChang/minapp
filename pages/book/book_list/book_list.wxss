@@ -8,3 +8,12 @@
   margin: 48vh 0;
   text-align: center;
 }
+.list{
+  margin: 5rpx 0;
+  width: 98%;
+  box-shadow: 0 0 3rpx rgba(155, 155, 155, 0.5);
+  background-color: rgba(155, 150, 150, 0.1)
+}
+/* .list:first-child{
+  margin-top: 0;
+} */
