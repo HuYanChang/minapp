@@ -31,8 +31,15 @@ const request = (url, method, data, successFun, failFun) => {wx.request({
   }
 })}
 
+const navTo = (path) => {
+  wx.navigateTo({
+    url: '/pages/' + path
+  })
+}
+
 module.exports = {
   formatTime: formatTime,
   request: request,
-  app: app
+  app: app,
+  navTo: navTo
 }
