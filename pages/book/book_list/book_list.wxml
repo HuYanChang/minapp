@@ -2,7 +2,7 @@
 <view class='container'>
   <view class='no_list' hidden='{{isHidden}}'>暂无订单</view>
   <block wx:for="{{bookList}}" wx:key='key'>
-    <view class='list'>
+    <view class='list' data-id='{{item.order_id}}' bindtap='toDetail'>
       <view>{{item.shop_name}}</view>
       <view>{{item.nick_name}}</view>
       <view>数量：{{item.goods_count}}</view>

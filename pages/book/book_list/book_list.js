@@ -92,5 +92,9 @@ Page({
         console.log('获取失败')
       }
       )
+  },
+  toDetail(e){
+    let id = e.currentTarget.dataset.id
+    utils.navTo("book/book_detail/book_detail?order_id="+id)
   }
 })

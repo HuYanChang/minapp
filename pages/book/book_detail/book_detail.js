@@ -1,18 +1,23 @@
 // pages/book/book_detail/book_detail.js
+import utils from '../../../utils/util.js'
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    order_id: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      order_id: options.order_id
+    })
+    console.log(this.data.order_id)
   },
 
   /**
@@ -62,5 +67,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 获取订单详情
+   */
+  getOrderDetail:function(order_id){
+      utils.request('Book/bookDetail', 'GET', {
+        order_id: order_id
+      },
+      res => {
+        console.log(res)
+      },
+      fail => {
+
+      }
+      )
   }
 })
