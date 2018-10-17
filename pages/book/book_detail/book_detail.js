@@ -17,7 +17,7 @@ Page({
     this.setData({
       order_id: options.order_id
     })
-    console.log(this.data.order_id)
+    this.getOrderDetail(this.data.order_id)
   },
 
   /**
