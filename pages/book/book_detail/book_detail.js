@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order_id: ''
+    order_id: '',
+    bookDetail: []
   },
 
   /**
@@ -76,10 +77,16 @@ Page({
         order_id: order_id
       },
       res => {
-        console.log(res)
+        let data = res.data
+        if(data.list){
+          this.setData({
+            bookDetail: data.list
+          })
+        }
+        //console.log(this.data.bookDetail)
       },
       fail => {
-
+        console.log('数据获取失败')
       }
       )
   }
