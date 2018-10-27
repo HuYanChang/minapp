@@ -3,6 +3,8 @@
     "pages/index/index",
     "pages/goods/goods",
     "pages/my/my",
+    "pages/my/coupon/coupon",
+    "pages/my/address/address",
     "pages/logs/logs",
     "pages/auth/auth",
     "pages/book/book_list/book_list",

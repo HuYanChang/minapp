@@ -20,7 +20,7 @@ Page({
       text: '我的代金券',
       isunread: false,
       unreadNum: 2,
-      toUrl: ''
+      toUrl: '/pages/my/coupon/coupon'
     }, {
       icon: '../../public/my/iconfont-icontuan.png',
       text: '我的拼团',
@@ -30,7 +30,7 @@ Page({
     }, {
       icon: '../../public/my/iconfont-shouhuodizhi.png',
       text: '收货地址管理',
-      toUrl:''
+      toUrl:'/pages/my/address/address'
     }, {
       icon: '../../public/my/iconfont-kefu.png',
       text: '联系客服',
