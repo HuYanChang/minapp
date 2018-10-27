@@ -1,2 +1,7 @@
 <!--pages/book/book_detail/book_detail.wxml-->
 <text>pages/book/book_detail/book_detail.wxml</text>
+<view class='container'>
+  <block wx:for="{{bookDetail}}" wx:key='key'>
+    <view>{{item.goods_name}}</view>
+  </block>
+</view>
